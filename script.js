@@ -1,14 +1,34 @@
-// Open Gallery
+// Get Music Element
+var music = document.getElementById("bgMusic");
+
+
+// ===== Open Gallery =====
 document.getElementById("openGallery").onclick = function () {
+
     document.getElementById("gallery").classList.add("active");
-    document.querySelector(".hero").classList.add("hide"); // 🔥 hero hide
+    document.querySelector(".hero").classList.add("hide");
+
+    // 🎵 Play Music
+    if (music) {
+        music.volume = 0.3; // soft start
+        music.play().catch(function(){});
+    }
 };
 
-// Close Gallery
+
+// ===== Close Gallery =====
 document.getElementById("closeGallery").onclick = function () {
+
     document.getElementById("gallery").classList.remove("active");
-    document.querySelector(".hero").classList.remove("hide"); // 🔥 hero back
+    document.querySelector(".hero").classList.remove("hide");
+
+    // 🎵 Optional: Pause music when closing
+    if (music) {
+        music.pause();
+        music.currentTime = 0; // reset song
+    }
 };
+
 
 
 // ===== Golden Cinematic Particles =====
