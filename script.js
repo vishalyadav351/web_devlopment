@@ -1,37 +1,45 @@
-// Get Music Element
-var music = document.getElementById("bgMusic");
-
-
-// ===== Open Gallery =====
-document.getElementById("openGallery").onclick = function () {
-
+// ===== Open Gallery & Play Music =====
+document.getElementById("openGallery").addEventListener("click", function () {
+    
+    // UI Changes (Gallery open karna)
     document.getElementById("gallery").classList.add("active");
     document.querySelector(".hero").classList.add("hide");
 
     // 🎵 Play Music
+    var music = document.getElementById("bgMusic");
     if (music) {
-        music.volume = 0.3; // soft start
-        music.play().catch(function(){});
+        music.volume = 1.0; // Volume 100% kar diya gaya hai (soft start se full par)
+        
+        // Play command with safety check
+        var playPromise = music.play();
+        if (playPromise !== undefined) {
+            playPromise.then(function() {
+                console.log("Gaana chal gaya!");
+            }).catch(function(error) {
+                console.log("Gaana chalne me error: ", error);
+            });
+        }
     }
-};
+});
 
 
-// ===== Close Gallery =====
-document.getElementById("closeGallery").onclick = function () {
+// ===== Close Gallery & Pause Music =====
+document.getElementById("closeGallery").addEventListener("click", function () {
 
     document.getElementById("gallery").classList.remove("active");
     document.querySelector(".hero").classList.remove("hide");
 
     // 🎵 Optional: Pause music when closing
+    var music = document.getElementById("bgMusic");
     if (music) {
         music.pause();
         music.currentTime = 0; // reset song
     }
-};
+});
 
 
 
-// ===== Golden Cinematic Particles =====
+// ===== Golden Cinematic Particles (Ye perfect hai, no changes needed) =====
 
 var canvas = document.getElementById("particles");
 var ctx = canvas.getContext("2d");
