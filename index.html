@@ -1,45 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hollywood Holi Premiere</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hollywood Holi Premiere</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="intro">
-    <h1 class="cinema-text">A Special Holi Wish</h1>
-</div>
-
-<canvas id="particles"></canvas>
-
-<div class="hero">
-    <h1 class="title">Happy Holi</h1>
-    <h2 class="name">Nishu Yadav</h2>
-
-    <div class="photo">
-        <img src="nishu9.jpg.jpeg">
+    <div class="intro">
+        <h1 class="cinema-text">A Special Holi Wish</h1>
     </div>
 
-    <button id="openGallery">Enter Red Carpet ✨</button>
-</div>
+    <canvas id="particles"></canvas>
 
-<div class="gallery" id="gallery">
-    <span class="close" id="closeGallery">✖</span>
+    <div class="hero">
+        <h1 class="title">Happy Holi</h1>
+        <h2 class="name">Nishu Yadav</h2>
 
-    <div class="glass-container">
-        <img src="p1.jpg.jpeg">
-        <img src="p2.jpg.jpeg">
-        <img src="p3.jpg.jpeg">
-        <img src="p4.jpg.jpeg">
+        <div class="photo">
+            <img src="nishu9.jpg.jpeg" alt="Nishu Photo">
+        </div>
+
+        <button id="openGallery" onclick="document.getElementById('bgMusic').play()">Enter Red Carpet ✨</button>
     </div>
-</div>
 
-<!-- ✅ Background Music Added -->
-<audio id="bgMusic" src="song.mp3.mp3" preload="auto" loop></audio>
+    <div class="gallery" id="gallery">
+        <span class="close" id="closeGallery">✖</span>
 
-<script src="script.js"></script>
+        <div class="glass-container">
+            <img src="p1.jpg.jpeg" alt="Gallery Pic 1">
+            <img src="p2.jpg.jpeg" alt="Gallery Pic 2">
+            <img src="p3.jpg.jpeg" alt="Gallery Pic 3">
+            <img src="p4.jpg.jpeg" alt="Gallery Pic 4">
+        </div>
+    </div>
+
+    <audio id="bgMusic" src="song.mp3.mp3" autoplay loop preload="auto"></audio>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
